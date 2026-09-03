@@ -2,7 +2,14 @@
 #include <xc.h>
 #include "avr/interrupt.h"
 #include "util/delay.h"
+#define KEY_RELEASED 0
+#define KEY_PRESSED 1
 
+
+uint8_t gKeyState_w = 0;
+uint8_t gKeyState_a = 0;
+uint8_t gKeyState_s = 0;
+uint8_t gKeyState_d = 0;
 
 void GPIO_config() {
 	/*0b0000 1111; inicialmente b0,b1,b2,b3 = 1. Se coloca o "~" elesinvertem e mudam pra zero */
@@ -26,10 +33,28 @@ void PCINT_config() {
 }
 
 ISR(PCINT0_vect) {
-	PORTC |= (1<<PORTC0);
-	_delay_ms(100);
-	PORTC &= ~(1<<PORTC0);
-	GPIO_incBar();
+	uint8_t tCurrentKeyState_w=0;
+	if(PINB & (1<<PINB0) !=0){ //Testa pino PB0
+		// PB0 = 1, tecla w solta
+		tCurrentKeyState_w = KEY_RELEASED;
+		} else {
+			//pb0 = 0, tecla w pressionada
+			tCurrentKeyState_w = KEY_PRESSED;
+		}
+		if(tCurrentKeyState_w == KEY_PRESSED && gKeyState_w == KEY_RELEASED){
+			//tecla w, acabou de ser pressionada
+			gKeyState_w = KEY_PRESSED;
+			GPIO_incBar();
+			}else if(tCurrentKeyState_w == KEY_RELEASED && gKeyState_w == KEY_PRESSED){
+			// TECLA W ACABOU DE SER SOLTA
+			gKeyState_w = KEY_RELEASED;
+			}
+			
+		
+	PORTC ^= (1<<PORTC0);
+	//_delay_ms(100);
+	//PORTC &= ~(1<<PORTC0);
+	
 }
 
 int main(void)
