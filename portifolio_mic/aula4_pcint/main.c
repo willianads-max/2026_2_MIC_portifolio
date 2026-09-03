@@ -21,9 +21,13 @@ void GPIO_config() {
 	DDRC |= (1<<DDC0); // Pino PC0  como saída
 }
 
-void GPIO_incBar(){
+void GPIO_incBar(){   //incrementa
 	PORTD = PORTD >> 1;
 	PORTD |= 0b10000000; //Aciona bit mais significativo
+}
+
+void GPIO_decBar(){  //decrementa
+	PORTD = PORTD << 1;
 }
 
 void PCINT_config() {
@@ -48,6 +52,22 @@ ISR(PCINT0_vect) {
 			}else if(tCurrentKeyState_w == KEY_RELEASED && gKeyState_w == KEY_PRESSED){
 			// TECLA W ACABOU DE SER SOLTA
 			gKeyState_w = KEY_RELEASED;
+			}
+			uint8_t tCurrentKeyState_s=0;
+			if(PINB & (1<<PINB0) !=0){ //Testa pino PB0
+				// PB0 = 1, tecla s solta
+				tCurrentKeyState_s = KEY_RELEASED;
+				} else {
+				//pb0 = 0, tecla w pressionada
+				tCurrentKeyState_s = KEY_PRESSED;
+			}
+			if(tCurrentKeyState_s == KEY_PRESSED && gKeyState_s == KEY_RELEASED){
+				//tecla s, acabou de ser pressionada
+				gKeyState_s = KEY_PRESSED;
+				GPIO_decBar();
+				}else if(tCurrentKeyState_s == KEY_RELEASED && gKeyState_s == KEY_PRESSED){
+				// TECLA W ACABOU DE SER SOLTA
+				gKeyState_s = tCurrentKeyState_s;
 			}
 			
 		
