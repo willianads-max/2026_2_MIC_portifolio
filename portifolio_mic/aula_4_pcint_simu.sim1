@@ -16,7 +16,7 @@
 
 <item itemtype="Resistor" CircId="Resistor-57" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="700,604" rotation="90" hflip="1" vflip="1" label="Resistor-57" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="100 Ω" />
 
-<item itemtype="Ground" CircId="Ground-80" mainComp="false" Show_id="false" Show_Val="false" Pos="700,656" rotation="0" hflip="1" vflip="1" label="Ground-80" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+<item itemtype="Ground" CircId="Ground-80" mainComp="false" Show_id="false" Show_Val="false" Pos="700,664" rotation="0" hflip="1" vflip="1" label="Ground-80" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
 
 <item itemtype="Led" CircId="Led-82" mainComp="false" Show_id="false" Show_Val="false" Pos="960,544" rotation="0" hflip="1" vflip="1" label="Led-82" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="false" Threshold="2.4 V" MaxCurrent="0.03 A" Resistance="0.6 Ω" />
 
@@ -66,7 +66,7 @@
 
 <item itemtype="Connector" uid="Connector-56" startpinid="Node-55-2" endpinid="Node-52-1" pointList="888,692,860,692" />
 
-<item itemtype="Connector" uid="Connector-81" startpinid="Ground-80-Gnd" endpinid="Resistor-57-rPin" pointList="700,640,700,620" />
+<item itemtype="Connector" uid="Connector-81" startpinid="Ground-80-Gnd" endpinid="Resistor-57-rPin" pointList="700,648,700,620" />
 
 <item itemtype="Connector" uid="Connector-85" startpinid="m328 TQFP-1-PORTC0" endpinid="Led-82-lPin" pointList="904,544,944,544" />
 
