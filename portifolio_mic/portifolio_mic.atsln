@@ -13,6 +13,8 @@ Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "aula4_pcint", "aula4_pcint\
 EndProject
 Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "aula5_Arduino", "aula5_Arduino\aula5_Arduino.cproj", "{A821D0C3-3659-48E6-9B7E-E4B056BB72A4}"
 EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Aula6_", "Aula6_\Aula6_.cproj", "{7640110C-8853-4166-88D8-D9357A7E1CA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|AVR = Debug|AVR
@@ -39,6 +41,10 @@ Global
 		{A821D0C3-3659-48E6-9B7E-E4B056BB72A4}.Debug|AVR.Build.0 = Debug|AVR
 		{A821D0C3-3659-48E6-9B7E-E4B056BB72A4}.Release|AVR.ActiveCfg = Release|AVR
 		{A821D0C3-3659-48E6-9B7E-E4B056BB72A4}.Release|AVR.Build.0 = Release|AVR
+		{7640110C-8853-4166-88D8-D9357A7E1CA4}.Debug|AVR.ActiveCfg = Debug|AVR
+		{7640110C-8853-4166-88D8-D9357A7E1CA4}.Debug|AVR.Build.0 = Debug|AVR
+		{7640110C-8853-4166-88D8-D9357A7E1CA4}.Release|AVR.ActiveCfg = Release|AVR
+		{7640110C-8853-4166-88D8-D9357A7E1CA4}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
