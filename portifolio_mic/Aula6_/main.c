@@ -5,7 +5,7 @@
 #include <xc.h>
 #include "util/delay.h"
 
-char gMessage[16] = "Mensagem"; //Null terminared strings
+char gMessage[16] = "Mensagem"; //Vetor
 
 /**
  * Configuração do módulo USART0 para modo assíncrono, frame de 8 bits, paridade par, BAUD de 9600
@@ -13,7 +13,7 @@ char gMessage[16] = "Mensagem"; //Null terminared strings
 
 void UART_config(){
     UCSR0A = 0;
-    UCSR0B = (1<<RXEN0)|(1<<TXEN0)|(0<<UCSZ02);//Habilita o transmissor UART0, frame de 8 bits
+    UCSR0B = (0<<RXEN0)|(1<<TXEN0)|(0<<UCSZ02);//Habilita o transmissor UART0, frame de 8 bits
     UCSR0C = (0<<UMSEL01)|(0<<UMSEL00)//Modo assíncrono
             |(1<<UPM01)|(0<<UPM00)//Habilita paridade par
             |(0<<USBS0)//1 bit de stop
