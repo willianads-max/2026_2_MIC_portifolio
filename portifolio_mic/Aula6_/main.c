@@ -1,16 +1,16 @@
-/* 
- * File:   main.c
- * Author: willianads
- *
- * Created on September 17, 2026, 10:16 AM
- */
+
 #define F_CPU 16000000
 #include <stdio.h>
 #include <stdlib.h>
-#include<xc.h>
+#include <xc.h>
+#include "util/delay.h"
+
+char gMessage[16] = "Mensagem"; //Null terminared strings
+
 /**
  * Configuração do módulo USART0 para modo assíncrono, frame de 8 bits, paridade par, BAUD de 9600
  */
+
 void UART_config(){
     UCSR0A = 0;
     UCSR0B = (1<<RXEN0)|(1<<TXEN0)|(0<<UCSZ02);//Habilita o transmissor UART0, frame de 8 bits
@@ -23,14 +23,25 @@ void UART_config(){
 }
 
 //Envia um byte na USART0
-void UART_send(){
-    UDR0 = 0x5A; //Envia um byte exemplo
-	_delay_ms(2)
+
+void UART_send_byte(uint8_t p8yte) { 
+	// Aguardar espaco buffer (CONDIÇÃO DE SEMÁFARO)
+	while((UCSR0A & (1<<UDRE0))==0);
+    UDR0 = p8yte; //Envia o byte do parametro
+}
+
+void UART_send_string(char *pString) {
+	char *tMessagePtr = pString;
+	while (*tMessagePtr != 0){
+		UART_send_byte(*tMessagePtr);
+		tMessagePtr++;
+	}
 }
 
 int main(void) {
 	UART_config();
     while(1){
-        UART_send();
+        UART_send_string(gMessage); 
+		_delay_ms(5); //Tempo de silencio
     }
 }
