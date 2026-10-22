@@ -19,6 +19,10 @@ Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "aula7_uart_rx", "aula7_uart
 EndProject
 Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Aula_9", "Aula_9\Aula_9.cproj", "{C12044E0-1DC2-4768-95BB-AC82497017CF}"
 EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Aula 10_twi_slave", "Aula 10_twi_slave\Aula 10_twi_slave.cproj", "{D439B56A-FC93-4C1C-A693-DBA99EDC8518}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Aula11_timer", "Aula11_timer\Aula11_timer.cproj", "{9C16C897-825C-4926-B2CB-88FE67757376}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|AVR = Debug|AVR
@@ -57,6 +61,14 @@ Global
 		{C12044E0-1DC2-4768-95BB-AC82497017CF}.Debug|AVR.Build.0 = Debug|AVR
 		{C12044E0-1DC2-4768-95BB-AC82497017CF}.Release|AVR.ActiveCfg = Release|AVR
 		{C12044E0-1DC2-4768-95BB-AC82497017CF}.Release|AVR.Build.0 = Release|AVR
+		{D439B56A-FC93-4C1C-A693-DBA99EDC8518}.Debug|AVR.ActiveCfg = Debug|AVR
+		{D439B56A-FC93-4C1C-A693-DBA99EDC8518}.Debug|AVR.Build.0 = Debug|AVR
+		{D439B56A-FC93-4C1C-A693-DBA99EDC8518}.Release|AVR.ActiveCfg = Release|AVR
+		{D439B56A-FC93-4C1C-A693-DBA99EDC8518}.Release|AVR.Build.0 = Release|AVR
+		{9C16C897-825C-4926-B2CB-88FE67757376}.Debug|AVR.ActiveCfg = Debug|AVR
+		{9C16C897-825C-4926-B2CB-88FE67757376}.Debug|AVR.Build.0 = Debug|AVR
+		{9C16C897-825C-4926-B2CB-88FE67757376}.Release|AVR.ActiveCfg = Release|AVR
+		{9C16C897-825C-4926-B2CB-88FE67757376}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
